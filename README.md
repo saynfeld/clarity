@@ -17,4 +17,7 @@ The legal entity is **Matchy Labs LTD** (England and Wales). Company number and
 registered office are marked with `<span class="placeholder">` until filled in;
 search for `placeholder` before publishing.
 
-This folder is the single source: edit the pages here directly.
+`privacy.html` and `terms.html` are generated: the texts live in the app
+(`../../App/NetStatus/Legal/{privacy,terms}.{en,ru}.md`, shown in-app in the
+device language). After editing them run `python3 build_legal.py` here and
+commit both repos. `index.html` and `style.css` are edited directly.
