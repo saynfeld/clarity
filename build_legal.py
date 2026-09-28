@@ -60,8 +60,12 @@ def render_blocks(blocks):
 
 def head(meta, langs=False):
     extra = '  <p class="langs"><a href="#en">English</a><a href="#ru">Русский</a></p>\n' if langs else ""
-    return (f'<header class="doc-head">\n  <p class="kicker">{html.escape(meta["kicker"])}</p>\n'
-            f'  <h1>{html.escape(meta["title"])}</h1>\n  <p class="updated">{html.escape(meta["updated"])}</p>\n{extra}</header>\n')
+    return f'<header class="doc-head">\n  <h1>{html.escape(meta["title"])}</h1>\n{extra}</header>\n'
+
+def updated(meta):
+    # Дата редакции — в конце документа, как в приложении.
+    return f'<p class="doc-date">{html.escape(meta["updated"])}</p>\n'
+
 
 for doc, page_title in DOCS.items():
     en_meta, en_blocks = parse((LEGAL / f"{doc}.en.md").read_text())
@@ -80,12 +84,14 @@ for doc, page_title in DOCS.items():
 <main id="en">
 
 {render_blocks(en_blocks)}
+{updated(en_meta)}
 </main>
 
 <main id="ru" lang="ru">
 
 {head(ru_meta)}
 {render_blocks(ru_blocks)}
+{updated(ru_meta)}
 </main>
 
 <footer>
