@@ -96,7 +96,7 @@ for doc, page_title in DOCS.items():
 
 <footer>
   <p><a href="./">Support</a><a href="privacy.html">Privacy Policy</a><a href="terms.html">Terms of Service</a></p>
-  <p>© 2026 Matchy Labs LTD</p>
+  <p>© 2026 Matchy Labs Ltd</p>
 </footer>
 
 </body>
