@@ -6,8 +6,9 @@ import html, pathlib, re
 
 SITE = pathlib.Path(__file__).resolve().parent
 LEGAL = SITE.parent.parent / "App" / "NetStatus" / "Legal"
-DOCS = {"privacy": "Clarity — Privacy Policy", "terms": "Clarity — Terms of Service"}
-LINKS = {"privacy": "privacy.html", "terms": "terms.html"}
+DOCS = {"privacy": "Clarity — Privacy Policy", "terms": "Clarity — Terms of Service",
+        "licenses": "Clarity — Open-Source Licenses"}
+LINKS = {"privacy": "privacy.html", "terms": "terms.html", "licenses": "licenses.html"}
 
 def inline(text: str) -> str:
     out, i = [], 0
@@ -95,7 +96,7 @@ for doc, page_title in DOCS.items():
 </main>
 
 <footer>
-  <p><a href="./">Support</a><a href="privacy.html">Privacy Policy</a><a href="terms.html">Terms of Service</a></p>
+  <p><a href="./">Support</a><a href="privacy.html">Privacy Policy</a><a href="terms.html">Terms of Service</a><a href="licenses.html">Licenses</a></p>
   <p>© 2026 Matchy Labs Ltd</p>
 </footer>
 
